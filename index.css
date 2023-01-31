@@ -102,7 +102,7 @@ html {
   
   .journal {
     padding: 0 25% 4rem 25%;
-    background-color: rgb(254, 231, 218);
+    background-color: white;
     color: #4a4a4a;
   }
   
@@ -169,7 +169,7 @@ html {
     display: flex;
     align-items: center;
     padding: 0 1%;
-    background-color: #212121;
+    background-color: white;
   }
   
   footer .image-container {
