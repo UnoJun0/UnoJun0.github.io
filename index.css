@@ -61,7 +61,6 @@ html {
     justify-content: center;
     align-items: center;
     height: 50rem;
-    background: url("https://content.codecademy.com/courses/freelance-1/unit-6/project-morocco/banner.jpg") center center no-repeat;
     background-size: cover;
     color: #ffb78c;
   }
@@ -139,7 +138,7 @@ html {
     font-size: 1.5rem;
   }
   
-  .journal .first-letter {
+  .journal .first-word {
     float: left;
     padding-right: 1.4rem;
     font-family: "Abril Fatface", serif;
