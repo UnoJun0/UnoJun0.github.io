@@ -22,28 +22,33 @@ html {
     align-items: center;
     height: 4.44rem;
     padding: 0 12%;
-    background-color: white;
+    background-color: rgb(139, 79, 79);
     box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.05);
     font-family: Verdana, sans-serif;
     font-size: .77rem;
   }
   
-  .header .logo {
+  .header span {
     flex-grow: 1;
-    color: #ffb78c;
+    font-weight: bold;
+    font-size: 20px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(255, 255, 255);
   }
   
   .header li {
     display: inline;
+    font-weight: bold;
+    font-size: 25px;
     padding-right: 2.22rem;
   }
   
   .header li a {
     text-decoration: none;
-    color: #4a4a4a;
+    color: #ffffff;
   }
   
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 50px) {
     .header {
       flex-direction: column;
     }
@@ -57,25 +62,21 @@ html {
   
   .banner {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    height: 50rem;
+    height: 200px;
     background-size: cover;
-    color: #ffb78c;
-  }
-  
-  .banner h2 {
-    padding: .55rem 0;
-    border-top: 4px solid #ffb78c;
-    border-bottom: 4px solid #ffb78c;
-    font-size: 1.44rem;
-    letter-spacing: 2px;
+    background-color:rgb(196, 101, 101);
   }
   
   .banner h1 {
-    padding-top: 1.11rem;
-    font-size: 11rem;
+    padding-top: 1.11px;
+    font-size: 50px;
+    font-family: 'Oswald', sans-serif;
+    font-style: italic;
+    align-items: center;
+    color:rgb(255, 255, 255);
   }
   
   @media only screen and (max-width: 750px) {
@@ -99,64 +100,30 @@ html {
   }
   
   /* body */
-  
-  .journal {
-    padding: 0 25% 4rem 25%;
-    background-color: white;
-    color: #4a4a4a;
-  }
-  
-  .photo {
-    width: 75%;
-    padding: 1.11rem;
-    border-radius: 5px;
-    margin: 0 auto 4.44rem auto;
-    background-color: white;
-  }
-  
-  .photo .image-container {
-    overflow: hidden;
-    margin-bottom: 1.11rem;
-  }
-  
-  .photo .image-container img {
-    width: 100%;
-  }
-  
-  .photo .caption {
-    font-style: italic;
-  }
-  
-  .photo.first {
-    position: relative;
-    top: -2.77rem;
-    margin-bottom: 1.67rem;
-  }
-  
-  .journal p {
-    padding-bottom: 2.77rem;
-    font-size: 1.5rem;
-  }
-  
-  .journal .first-word {
-    float: left;
-    padding-right: 1.4rem;
-    font-family: "Abril Fatface", serif;
-    font-size: 7.44rem;
-    color: #10b0d8;
-  }
-  
-  .quote {
-    display: block;
-    padding: 4.44rem 0;
-    margin-bottom: 3.33rem;
-    border-top: 4px solid black;
-    border-bottom: 4px solid black;
+  .body {
     text-align: center;
-    font-size: 3.55rem;
-    font-weight: 800;
-  }
+    position: relative;
+    top: 0px;
+    clear: left;
+    background-color: rgb(255, 242, 242);
+    }
+
   
+  .body1  {
+    width: 200px;
+    color: #ff6161;
+    font-family: 'Oswald', sans-serif;
+    font-size: 15px;
+    text-align: center;
+    font-weight: 200;
+    text-transform: uppercase;
+    padding: 20px;
+    border: 3px solid #8a3027;
+    margin: 20px;
+    display: inline-table;
+  }
+
+
   @media only screen and (max-width: 680px) {
     .journal {
       padding: 0 10% 4rem 10%;
