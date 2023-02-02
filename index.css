@@ -48,6 +48,10 @@ html {
     text-decoration: none;
     color: #ffffff;
   }
+
+  .header li a:hover {
+    color: rgb(0, 0, 0);
+  }
   
   @media only screen and (max-width: 50px) {
     .header {
