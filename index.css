@@ -113,12 +113,13 @@ html {
     clear: left;
     background-color: rgb(255, 242, 242);
     }
+    
+  .body1  h1{
+    display: inline-block;
+    width: 75%;
+    height: 50px;
 
-  .body1  h2{
-    color: #7e1515;
-    font-style: normal;
-    font-size: 12px;
-    }
+  }
   
   .body1  {
     width: 200px;
@@ -129,9 +130,13 @@ html {
     font-style: italic;
     text-align: center;
     text-transform: uppercase;
-    padding: 20px;
+    padding: 40px;
     border: 10px solid rgb(139, 79, 79);
-    margin: 20px;
+    margin: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
     display: inline-table;
   }
 
@@ -166,11 +171,47 @@ html {
     margin: auto;
     width: 200px;
     padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 50px;
     text-align: center;
   }
+
+  button {
+    margin: auto;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    background-color: #878787; 
+    color: rgb(255, 255, 255);
+    padding: auto;
+    font-weight: bold;
+    border-radius: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  textarea {
+    margin: 10px 10px 10px 10px;
+    width: 200px;
+    padding: 30px 10px 10px 10px;
+    border: 200px rgb(0, 0, 0);
+    background-color: #d9d9d9;
+    text-align: center;
+    font-style: italic;
+    font-weight:600;
+    font-size: 20px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;  
+    color: rgb(118, 0, 0);
+    display: block;
+  }
+
+
+.flagImage {
+  display: inline-block;
+  margin: 10px 10px 10px 10px;
+}
   
-  /* Footer */
-  
+  /* Footer */  
   footer {
     display: flex;
     align-items: center;
