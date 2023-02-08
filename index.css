@@ -140,6 +140,34 @@ html {
       padding: 0 10% 4rem 10%;
     }
   }
+
+  .container {
+    text-align: center;
+    position: center;
+    top: 0px;
+    clear: left;
+    background-color: rgb(164, 52, 52);
+    }
+
+  .generateText {
+    display: block;
+    gap: 0.5rem;
+    flex-direction: column;
+    width: 400px;
+    height: 200px;
+    display: inline-block;
+    position: relative;
+    align-items: center;
+    margin: 20px 20px 20px 20px;
+    vertical-align: middle;
+  }
+  
+  .button {
+    margin: auto;
+    width: 200px;
+    padding: 10px;
+    text-align: center;
+  }
   
   /* Footer */
   
