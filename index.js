@@ -8,14 +8,26 @@ function getWordEng(){
   var theWordEng= [
     'Hello',
     'Hi',
-    'Yo',
+    'Hey',
   ];
 
-var wordNum = Math.floor(Math.random() * theWordEng.length);  
+  var wordNum = Math.floor(Math.random() * theWordEng.length);  
   outEng.textContent = theWordEng[wordNum];
   }
 
+
 //French
+const btnFrench = document.getElementById("generateFrench");
+
+btnFrench.addEventListener("click", generate);
+
+function generate (){
+  const frenchWordList = ['Bonjoir','Salut','Bonsoir'];
+  document.getElementById("outputFrench").textContent = frenchWordList[Math.floor(Math.random()*frenchWordList.length)]
+}
+
+
+/*French2
 const btnFre = document.getElementById("generateFrench");
 const outFre = document.getElementById("outputFrench");
       
@@ -30,9 +42,9 @@ function getWordFre(){
 
 var wordNum = Math.floor(Math.random() * theWordFre.length);  
   outFre.textContent = theWordFre[wordNum];
-  }
+  }*/
 
-//Japanese
+/*Japanese
 const btnJap = document.getElementById("generateJapanese");
 const outJap = document.getElementById("outputJapanese");
     
@@ -47,9 +59,17 @@ var theWordJap= [
 
 var wordNum = Math.floor(Math.random() * theWordJap.length);  
 outJap.textContent = theWordJap[wordNum];
+}*/
+
+//Japanese2
+document.getElementById("generateJapanese").addEventListener("click", generateJapanese)
+
+function generateJapanese (){
+  const japaneseWordList = ['Konnichiwa','Ohayou','Konbanwa'];
+  outputJapanese.textContent = japaneseWordList[Math.floor(Math.random()*japaneseWordList.length)]
 }
 
-//German
+/*German
 const btnGerm = document.getElementById("generateGerman");
 const outGerm = document.getElementById("outputGerman");
     
@@ -64,7 +84,21 @@ var theWordGerm= [
 
 var wordNum = Math.floor(Math.random() * theWordGerm.length);  
 outGerm.textContent = theWordGerm[wordNum];
+}*/
+
+/*German2
+document.getElementById("generateGerman").addEventListener("click", germanButton)  
+
+function randomWord (words) {
+  return words [Math.floor(Math.random() * words.length)]
 }
+
+const theWordGerm= ['Hallo', 'Guten Tag','Moin',]
+
+function germanButton () {
+  outputGerman.textContent = randomWord(theWordGerm)}
+*/
+
 
 //Hindi
 const btnHindi = document.getElementById("generateHindi");
