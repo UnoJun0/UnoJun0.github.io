@@ -44,7 +44,15 @@ var wordNum = Math.floor(Math.random() * theWordFre.length);
   outFre.textContent = theWordFre[wordNum];
   }*/
 
-/*Japanese
+//Japanese
+document.getElementById("generateJapanese").addEventListener("click", generateJapanese)
+
+function generateJapanese (){
+  const japaneseWordList = ['Konnichiwa','Ohayou','Konbanwa'];
+  outputJapanese.textContent = japaneseWordList[Math.floor(Math.random()*japaneseWordList.length)]
+}
+
+/*Japanese2
 const btnJap = document.getElementById("generateJapanese");
 const outJap = document.getElementById("outputJapanese");
     
@@ -61,22 +69,26 @@ var wordNum = Math.floor(Math.random() * theWordJap.length);
 outJap.textContent = theWordJap[wordNum];
 }*/
 
-//Japanese2
-document.getElementById("generateJapanese").addEventListener("click", generateJapanese)
 
-function generateJapanese (){
-  const japaneseWordList = ['Konnichiwa','Ohayou','Konbanwa'];
-  outputJapanese.textContent = japaneseWordList[Math.floor(Math.random()*japaneseWordList.length)]
+//German
+document.getElementById("generateGerman").addEventListener("click", germanButton)  
+
+function randomWord (words) {
+  return words [Math.floor(Math.random() * words.length)]
+}
+function germanButton () {
+  const theWordGerm= ['Hallo', 'Guten Tag','Moin',];
+  outputGerman.textContent = randomWord(theWordGerm)
 }
 
-/*German
+/*German2
 const btnGerm = document.getElementById("generateGerman");
 const outGerm = document.getElementById("outputGerman");
     
 btnGerm.addEventListener("click", getWordGerman);
   
 function getWordGerman(){      
-var theWordGerm= [
+const theWordGerm= [
   'Hallo',
   'Guten Tag',
   'Moin',
@@ -86,21 +98,17 @@ var wordNum = Math.floor(Math.random() * theWordGerm.length);
 outGerm.textContent = theWordGerm[wordNum];
 }*/
 
-/*German2
-document.getElementById("generateGerman").addEventListener("click", germanButton)  
-
-function randomWord (words) {
-  return words [Math.floor(Math.random() * words.length)]
-}
-
-const theWordGerm= ['Hallo', 'Guten Tag','Moin',]
-
-function germanButton () {
-  outputGerman.textContent = randomWord(theWordGerm)}
-*/
-
 
 //Hindi
+document.getElementById("generateHindi").addEventListener("click", hindiButton)  
+
+function hindiButton () {
+  const theWordHindi = ['Namaste', 'Namaskar', 'Suprabhat'];
+  outputHindi.textContent = randomWord(theWordHindi);
+}
+
+
+/*Hindi2
 const btnHindi = document.getElementById("generateHindi");
 const outHindi = document.getElementById("outputHindi");
     
@@ -115,9 +123,18 @@ var theWordHindi= [
 
 var wordNum = Math.floor(Math.random() * theWordHindi.length);  
 outHindi.textContent = theWordHindi[wordNum];
-}
+}*/
 
 //Chinese
+document.getElementById("generateChinese").addEventListener("click", function hindiButton () {
+  const theWordChinese = ['Nihao', 'Ninhao', 'Dajiahao'];
+  outputChinese.textContent = randomWord(theWordChinese);
+})
+
+
+
+
+/*Chinese2
 const btnChinese = document.getElementById("generateChinese");
 const outChinese = document.getElementById("outputChinese");
     
@@ -132,4 +149,4 @@ var theWordChinese= [
 
 var wordNum = Math.floor(Math.random() * theWordChinese.length);  
 outChinese.textContent = theWordChinese[wordNum];
-}
+}*/
