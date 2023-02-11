@@ -210,6 +210,11 @@ html {
   display: inline-block;
   margin: 10px 10px 10px 10px;
 }
+
+
+.clearText {
+  background-color: rgb(46, 46, 46);
+}
   
   /* Footer */  
   footer {
