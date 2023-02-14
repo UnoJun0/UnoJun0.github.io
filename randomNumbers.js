@@ -19,17 +19,19 @@ function createArrayOfNumbers(start, end){
     return myArray;
 };
 
+//array variable that takes two arguments (start and finish);
 let numbersArray = createArrayOfNumbers(1,20);
 
-btn.addEventListener('click', () => {
+btn.addEventListener('click',() => {
     if(numbersArray.length == 0){
         output.innerText = 'No More Random Numbers';
         return;
     }
+
     let randomIndex = getRandomNumber(0, numbersArray.length-1);
     let randomNumber = numbersArray[randomIndex];
-    numbersArray.splice(randomIndex, 1)
     output.innerText = randomNumber;
+    numbersArray.splice(randomIndex, 1);
 });
 
 document.querySelector('p').textContent = numbersArray

@@ -1,4 +1,4 @@
-//English
+/*English
 const btnEng = document.getElementById("generateEnglish");
 const outEng = document.getElementById("outputEnglish");
       
@@ -13,8 +13,30 @@ function getWordEng(){
 
   var wordNum = Math.floor(Math.random() * theWordEng.length);  
   outEng.textContent = theWordEng[wordNum];
-  }
+  }*/
 
+//eliminate repetition  
+const btnEng = document.getElementById("generateEnglish");
+const outEng = document.getElementById("outputEnglish");
+      
+let theWordEng= ['Hello','Hi','Hey',];   
+
+btnEng.addEventListener("click", getWordEng);
+
+function getWordEng () {   
+
+  if (theWordEng.length < 1) {
+    outEng.textContent = "All done!";
+    return;
+  };
+
+  let wordNumEng = Math.floor(Math.random() * theWordEng.length);
+  let randomWordEng =  theWordEng[wordNumEng]; 
+  outEng.textContent = randomWordEng;
+  theWordEng.splice(wordNumEng,1);
+  };
+
+//clear button
 const btnClearTextEng = document.getElementById("clearTextEnglish");
 
 btnClearTextEng.addEventListener("click", function (){
@@ -24,14 +46,23 @@ btnClearTextEng.addEventListener("click", function (){
 
 //French
 const btnFrench = document.getElementById("generateFrench");
+let frenchWordList = ['Bonjoir','Salut','Bonsoir'];
 
-btnFrench.addEventListener("click", generate);
+btnFrench.addEventListener("click", generateFrench);
 
-function generate (){
-  const frenchWordList = ['Bonjoir','Salut','Bonsoir'];
-  document.getElementById("outputFrench").textContent = frenchWordList[Math.floor(Math.random()*frenchWordList.length)]
+function generateFrench (){
+  if (frenchWordList.length <1) {
+    document.getElementById("outputFrench").textContent = "All done!";
+    return;
+  };
+  wordNumFrench = frenchWordList[Math.floor(Math.random()*frenchWordList.length)];
+
+  document.getElementById("outputFrench").textContent = wordNumFrench;
+  frenchWordList.splice(wordNumFrench,1);
 }
 
+
+//clear button
 const btnClearTextFrench = document.getElementById("clearTextFrench");
 
 btnClearTextFrench.addEventListener("click", function (){
@@ -64,6 +95,7 @@ function generateJapanese (){
   outputJapanese.textContent = japaneseWordList[Math.floor(Math.random()*japaneseWordList.length)]
 }
 
+//clear button
 const btnClearTextJapanese = document.getElementById("clearTextJapanese");
 
 btnClearTextJapanese.addEventListener("click", function (){
@@ -99,6 +131,7 @@ function germanButton () {
   outputGerman.textContent = randomWord(theWordGerm)
 }
 
+//clear button
 const btnClearTextGerman = document.getElementById("clearTextGerman");
 
 btnClearTextGerman.addEventListener("click", function (){
@@ -131,6 +164,7 @@ function hindiButton () {
   outputHindi.textContent = randomWord(theWordHindi);
 }
 
+//clear button
 const btnClearTextHindi = document.getElementById("clearTextHindi");
 
 btnClearTextHindi.addEventListener("click", function (){
