@@ -176,42 +176,75 @@ function getWordFre(){
 //JapaneseV3
 document.getElementById("generateJapanese").addEventListener("click", generateJapanese);
 
-const theWordJapanese = ['A','B','C'];
-
-let wordListJapanese = [];
-
+let theWordJapanese = ['A','B','C', 'D', 'E', 'F'];
+let previousWordJapanese = "";
+ 
 function generateJapanese (){
-
-    let wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
-    let theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
-    let previousWordJapanese = "";
-
-    if (theWordJapaneseTemp === previousWordJapanese) {
-
-      // outputJapanese.textContent = wordListJapanese;
-      // return;}
-
-      let theWordJapaneseAlt = theWordJapanese.splice(wordIndexJapanese, 1);
-      let altJapaneseWord = theWordJapaneseAlt[Math.floor(Math.random()*theWordJapaneseAlt.length)];
-      outputJapanese.textContent = altJapaneseWord;
-      wordListJapanese.push(altJapaneseWord);
-      outputChinese.textContent = wordListJapanese;
-      // theWordJapaneseAlt = theWordJapanese;
-      previousWordJapanese = "";
-      return;}
-
-      // let theWordJapanese2 = ['A','B','C'];
-      // theWordJapanese2.splice(wordIndexJapanese,1);
-      // let wordIndexJapanese2 = Math.floor(Math.random() * theWordJapanese2.length);  
-      // let theWordJapaneseTemp2= theWordJapanese[wordIndexJapanese2];
-      // outputJapanese.textContent = theWordJapaneseTemp2;
-      // let previousWordJap
+  let wordIndexJapanese = 0;
+  let theWordJapaneseTemp = "";
+  do {
+    wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
+    theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
+  }while(theWordJapaneseTemp===previousWordJapanese);
   
-    else {
-      outputJapanese.textContent = theWordJapaneseTemp;
-      previousWordJapanese = theWordJapaneseTemp;
-      wordListJapanese.push(theWordJapaneseTemp);
-      outputChinese.textContent = wordListJapanese; //using this to test ability to maintain history
-      return;
-      }    
-    }
+  previousWordJapanese = theWordJapaneseTemp;
+  outputJapanese.textContent = theWordJapaneseTemp;
+}
+
+  // if (theWordJapanese.length > 0) {
+  //   let wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
+  //   let theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
+    
+  //   outputJapanese.textContent = theWordJapaneseTemp;
+  //   theWordJapanese.splice(wordIndexJapanese, 1);
+  //   previousWordsJapanese.push(theWordJapaneseTemp);
+  //   console.log(previousWordsJapanese);
+  //     }
+
+  // else {
+  //   theWordJapanese = theWordJapanese.concat(previousWordsJapanese);
+  //   previousWordsJapanese.splice(0);
+
+  //   let wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
+  //   let theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
+    
+  //   outputJapanese.textContent = theWordJapaneseTemp;
+  //   theWordJapanese.splice(wordIndexJapanese, 1);
+  //   previousWordsJapanese.push(theWordJapaneseTemp);
+  //   console.log(previousWordsJapanese);
+  //   };
+
+  
+  // if (previousWordJapanese == 'A') {
+  //   let option1 = ['B', 'C'][Math.floor(Math.random()*2)];
+  //   outputJapanese.textContent = option1;
+  //   previousWordsJapanese.push(option1);
+  //   console.log(previousWordsJapanese);
+  //   previousWordJapanese = option1;
+  // }
+
+  // else if (previousWordJapanese == 'B') {
+  //   let option2= ['A', 'C'][Math.floor(Math.random()*2)];
+  //   outputJapanese.textContent = option2;
+  //   previousWordsJapanese.push(option2);
+  //   console.log(previousWordsJapanese);
+  //   previousWordJapanese = option2;
+  // }
+
+  // else if (previousWordJapanese == 'C') {
+  //   let option3 = ['A', 'B'][Math.floor(Math.random()*2)];
+  //    outputJapanese.textContent = option3;
+  //    previousWordsJapanese.push(option3);
+  //    console.log(previousWordsJapanese);
+  //    previousWordJapanese = option3;
+     
+  // }
+
+  // else {
+  //    outputJapanese.textContent = theWordJapaneseTemp;
+  //    previousWordsJapanese.push(theWordJapaneseTemp);
+  //    previousWordJapanese = theWordJapaneseTemp;
+  //    console.log(previousWordsJapanese);
+  // };}
+
+    
