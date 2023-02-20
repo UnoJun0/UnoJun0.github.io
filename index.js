@@ -43,7 +43,7 @@ btnClearTextChinese.addEventListener("click", function (){
   document.getElementById("outputChinese").textContent = ""
 });
 
-//English
+//EnglishV1
 // const btnEng = document.getElementById("generateEnglish");
 // const outEng = document.getElementById("outputEnglish");
       
@@ -56,7 +56,7 @@ btnClearTextChinese.addEventListener("click", function (){
 //   outEng.textContent = theWordEng[wordNum];
 //   }; 
 
-//French
+//FrenchV1
 // const btnFre = document.getElementById("generateFrench");
 // const outFre = document.getElementById("outputFrench");
       
@@ -73,7 +73,7 @@ btnClearTextChinese.addEventListener("click", function (){
 //   outFre.textContent = theWordFre[wordNum];
 //   };
 
-//Japanese
+//JapaneseV1
 // document.getElementById("generateJapanese").addEventListener("click", generateJapanese)
 
 // function generateJapanese (){
@@ -81,40 +81,40 @@ btnClearTextChinese.addEventListener("click", function (){
 //   outputJapanese.textContent = japaneseWordList[Math.floor(Math.random()*japaneseWordList.length)]
 // };
 
-//German
-function randomWord (words) { //this is for both German and Hindi
-  return words [Math.floor(Math.random() * words.length)]
-}
-document.getElementById("generateGerman").addEventListener("click", germanButton)  
+//GermanV1
+// function randomWord (words) { //this is for both German and Hindi
+//   return words [Math.floor(Math.random() * words.length)]
+// }
+// document.getElementById("generateGerman").addEventListener("click", germanButton)  
 
-function germanButton () {
-  const theWordGerm= ['Hallo', 'Guten Tag','Moin',];
-  outputGerman.textContent = randomWord(theWordGerm)
-};
+// function germanButton () {
+//   const theWordGerm= ['Hallo', 'Guten Tag','Moin',];
+//   outputGerman.textContent = randomWord(theWordGerm)
+// };
 
 //Hindi
-document.getElementById("generateHindi").addEventListener("click", hindiButton)  
+// document.getElementById("generateHindi").addEventListener("click", hindiButton)  
 
-function hindiButton () {
-  const theWordHindi = ['Namaste', 'Namaskar', 'Suprabhat'];
-  outputHindi.textContent = randomWord(theWordHindi);
-}
+// function hindiButton () {
+//   const theWordHindi = ['Namaste', 'Namaskar', 'Suprabhat'];
+//   outputHindi.textContent = randomWord(theWordHindi);
+// }
 
 //Chinese
-// document.getElementById("generateChinese").addEventListener("click", function () {
-//   let finalOutputChinese = greetings.chinese[Math.floor(Math.random() * greetings.chinese.length)];
-//   outputChinese.textContent = finalOutputChinese;
-// });
+document.getElementById("generateChinese").addEventListener("click", function () {
+  let finalOutputChinese = greetings.chinese[Math.floor(Math.random() * greetings.chinese.length)];
+  outputChinese.textContent = finalOutputChinese;
+});
 
-// //object approach - can be used for any language, but currently only used for Chinese
-// const greetings = {
-//   english: ['Hi', 'Hello', 'Hey'],
-//   french: ['Bonjoir','Salut','Bonsoir'],
-//   japanese: ['Konnichiwa','Ohayou','Konbanwa'],
-//   german: ['Hallo', 'Guten Tag','Moin',],
-//   hindi: ['Namaste', 'Namaskar', 'Suprabhat'],
-//   chinese: ['Nihao', 'Ninhao', 'Dajiahao']
-// };
+//object approach - can be used for any language, but currently only used for Chinese
+const greetings = {
+  english: ['Hi', 'Hello', 'Hey'],
+  french: ['Bonjoir','Salut','Bonsoir'],
+  japanese: ['Konnichiwa','Ohayou','Konbanwa'],
+  german: ['Hallo', 'Guten Tag','Moin',],
+  hindi: ['Namaste', 'Namaskar', 'Suprabhat'],
+  chinese: ['Nihao', 'Ninhao', 'Dajiahao']
+};
 
 ////New Code
 
@@ -158,30 +158,19 @@ function getWordFre(){
   theWordFrench.splice(wordIndexFrench, 1);
   };
 
+
 //JapaneseV2
-// document.getElementById("generateJapanese").addEventListener("click", generateJapanese)
-// let theWordJapanese = ['Konnichiwa','Ohayou','Konbanwa'];
-
-// function generateJapanese(){      
-// if (theWordJapanese.length == 0) {
-//   outputJapanese.textContent = "Donezo";
-//   return;
-// }
-
-// let wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
-// outputJapanese.textContent = theWordJapanese[wordIndexJapanese];
-// theWordJapanese.splice(wordIndexJapanese, 1);
-// }
-
-//JapaneseV3
 document.getElementById("generateJapanese").addEventListener("click", generateJapanese);
 
-let theWordJapanese = ['A','B','C', 'D', 'E', 'F'];
+let theWordJapanese = ['Konnichiwa','Ohayou','Konbanwa'];
 let previousWordJapanese = "";
+let previousWordsListJapanese = [];
  
 function generateJapanese (){
+  
   let wordIndexJapanese = 0;
   let theWordJapaneseTemp = "";
+
   do {
     wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
     theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
@@ -189,62 +178,75 @@ function generateJapanese (){
   
   previousWordJapanese = theWordJapaneseTemp;
   outputJapanese.textContent = theWordJapaneseTemp;
-}
+  previousWordsListJapanese.push(previousWordJapanese);
+  console.log(previousWordsListJapanese);
+};
 
-  // if (theWordJapanese.length > 0) {
-  //   let wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
-  //   let theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
-    
-  //   outputJapanese.textContent = theWordJapaneseTemp;
-  //   theWordJapanese.splice(wordIndexJapanese, 1);
-  //   previousWordsJapanese.push(theWordJapaneseTemp);
-  //   console.log(previousWordsJapanese);
-  //     }
+//GermanV2
+document.getElementById("generateGerman").addEventListener("click", generateGerman);
 
-  // else {
-  //   theWordJapanese = theWordJapanese.concat(previousWordsJapanese);
-  //   previousWordsJapanese.splice(0);
-
-  //   let wordIndexJapanese = Math.floor(Math.random() * theWordJapanese.length);  
-  //   let theWordJapaneseTemp = theWordJapanese[wordIndexJapanese];
-    
-  //   outputJapanese.textContent = theWordJapaneseTemp;
-  //   theWordJapanese.splice(wordIndexJapanese, 1);
-  //   previousWordsJapanese.push(theWordJapaneseTemp);
-  //   console.log(previousWordsJapanese);
-  //   };
-
+let theWordGerman = ['Hallo', 'Guten Tag','Moin',];
+let previousWordGerman = "";
+let previousWordsListGerman = [];
+ 
+function generateGerman (){
   
-  // if (previousWordJapanese == 'A') {
-  //   let option1 = ['B', 'C'][Math.floor(Math.random()*2)];
-  //   outputJapanese.textContent = option1;
-  //   previousWordsJapanese.push(option1);
-  //   console.log(previousWordsJapanese);
-  //   previousWordJapanese = option1;
-  // }
+  let wordIndexGerman = 0;
+  let theWordGermanTemp = "";
 
-  // else if (previousWordJapanese == 'B') {
-  //   let option2= ['A', 'C'][Math.floor(Math.random()*2)];
-  //   outputJapanese.textContent = option2;
-  //   previousWordsJapanese.push(option2);
-  //   console.log(previousWordsJapanese);
-  //   previousWordJapanese = option2;
-  // }
+  do {
+    wordIndexGerman = Math.floor(Math.random() * theWordGerman.length);  
+    theWordGermanTemp = theWordGerman[wordIndexGerman];
+  }while(theWordGermanTemp===previousWordGerman);
+  
+  previousWordGerman = theWordGermanTemp;
+  outputGerman.textContent = theWordGermanTemp;
+  previousWordsListGerman.push(previousWordGerman);
+  console.log(previousWordsListGerman);
+};    
 
-  // else if (previousWordJapanese == 'C') {
-  //   let option3 = ['A', 'B'][Math.floor(Math.random()*2)];
-  //    outputJapanese.textContent = option3;
-  //    previousWordsJapanese.push(option3);
-  //    console.log(previousWordsJapanese);
-  //    previousWordJapanese = option3;
-     
-  // }
+//HindiV2
+document.getElementById("generateHindi").addEventListener("click", generateHindi);
 
-  // else {
-  //    outputJapanese.textContent = theWordJapaneseTemp;
-  //    previousWordsJapanese.push(theWordJapaneseTemp);
-  //    previousWordJapanese = theWordJapaneseTemp;
-  //    console.log(previousWordsJapanese);
-  // };}
+let theWordHindi = ['Namaste', 'Namaskar', 'Suprabhat'];
+let previousWordHindi = "";
+let previousWordsListHindi = [];
+ 
+function generateHindi (){
+  
+  let wordIndexHindi = 0;
+  let theWordHindiTemp = "";
 
-    
+  do {
+    wordIndexHindi = Math.floor(Math.random() * theWordHindi.length);  
+    theWordHindiTemp = theWordHindi[wordIndexHindi];
+  }while(theWordHindiTemp===previousWordHindi);
+  
+  previousWordHindi = theWordHindiTemp;
+  outputHindi.textContent = theWordHindiTemp;
+  previousWordsListHindi.push(previousWordHindi);
+  console.log(previousWordsListHindi);
+};    
+
+//ChineseV2
+{document.getElementById("generateChinese").addEventListener("click", generateChinese);
+
+let theWordChinese = ['Nihao', 'Ninhao', 'Dajiahao'];
+let previousWordChinese = "";
+let previousWordsListChinese = [];
+ 
+function generateChinese (){
+  
+  let wordIndexChinese = 0;
+  let theWordChineseTemp = "";
+
+  do {
+    wordIndexChinese = Math.floor(Math.random() * theWordChinese.length);  
+    theWordChineseTemp = theWordChinese[wordIndexChinese];
+  }while(theWordChineseTemp===previousWordChinese);
+  
+  previousWordChinese = theWordChineseTemp;
+  outputChinese.textContent = theWordChineseTemp;
+  previousWordsListChinese.push(previousWordChinese);
+  console.log(previousWordsListChinese);
+};    }
