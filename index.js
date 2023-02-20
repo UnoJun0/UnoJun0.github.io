@@ -2,10 +2,10 @@
 
 //Clear buttons
 //English - Clear Button
-const btnClearTextEng = document.getElementById("clearTextEnglish");
+const btnClearTextEnglish = document.getElementById("clearTextEnglish");
 
-btnClearTextEng.addEventListener("click", function (){
-  outEng.textContent = "";
+btnClearTextEnglish.addEventListener("click", function (){
+  document.getElementById("outputEnglish").textContent = ""
 });
 
 //French - Clear Button
@@ -101,63 +101,89 @@ btnClearTextChinese.addEventListener("click", function (){
 // }
 
 //Chinese
-document.getElementById("generateChinese").addEventListener("click", function () {
-  let finalOutputChinese = greetings.chinese[Math.floor(Math.random() * greetings.chinese.length)];
-  outputChinese.textContent = finalOutputChinese;
-});
+// document.getElementById("generateChinese").addEventListener("click", function () {
+//   let finalOutputChinese = greetings.chinese[Math.floor(Math.random() * greetings.chinese.length)];
+//   outputChinese.textContent = finalOutputChinese;
+// });
 
-//object approach - can be used for any language, but currently only used for Chinese
-const greetings = {
-  english: ['Hi', 'Hello', 'Hey'],
-  french: ['Bonjoir','Salut','Bonsoir'],
-  japanese: ['Konnichiwa','Ohayou','Konbanwa'],
-  german: ['Hallo', 'Guten Tag','Moin',],
-  hindi: ['Namaste', 'Namaskar', 'Suprabhat'],
-  chinese: ['Nihao', 'Ninhao', 'Dajiahao']
-};
+// //object approach - can be used for any language, but currently only used for Chinese
+// const greetings = {
+//   english: ['Hi', 'Hello', 'Hey'],
+//   french: ['Bonjoir','Salut','Bonsoir'],
+//   japanese: ['Konnichiwa','Ohayou','Konbanwa'],
+//   german: ['Hallo', 'Guten Tag','Moin',],
+//   hindi: ['Namaste', 'Namaskar', 'Suprabhat'],
+//   chinese: ['Nihao', 'Ninhao', 'Dajiahao']
+// };
 
 ////New Code
 
 //EnglishV2
-const btnEng = document.getElementById("generateEnglish");
-const outEng = document.getElementById("outputEnglish");
+// const btnEng = document.getElementById("generateEnglish");
+// const outEng = document.getElementById("outputEnglish");
 
-let theWordEng= ['Hello','Hi','Hey',];   
+// let theWordEng= ['Hello','Hi','Hey',];   
 
-btnEng.addEventListener("click", getWordEng);
+// btnEng.addEventListener("click", getWordEng);
 
-function getWordEng () {   
+// function getWordEng () {   
 
-  if (theWordEng.length < 1) {
-    outEng.textContent = "All done!";
-    return;
-  };
+//   if (theWordEng.length < 1) {
+//     outEng.textContent = "All done!";
+//     return;
+//   };
 
-  let wordIndexEng = Math.floor(Math.random() * theWordEng.length);
-  let randomWordEng =  theWordEng[wordIndexEng]; 
-  outEng.textContent = randomWordEng;
-  theWordEng.splice(wordIndexEng,1);
-  };
+//   let wordIndexEng = Math.floor(Math.random() * theWordEng.length);
+//   let randomWordEng =  theWordEng[wordIndexEng]; 
+//   outEng.textContent = randomWordEng;
+//   theWordEng.splice(wordIndexEng,1);
+//   };
+
+//EnglishV3
+document.getElementById("generateEnglish").addEventListener("click", generateEnglish);
+
+let theWordEnglish = ['Hello','Hi','Hey',];   
+let previousWordEnglish = "";
+let previousWordsListEnglish = [];
+ 
+function generateEnglish (){
+  
+  let wordIndexEnglish = 0;
+  let theWordEnglishTemp = "";
+
+  do {
+    wordIndexEnglish = Math.floor(Math.random() * theWordEnglish.length);  
+    theWordEnglishTemp = theWordEnglish[wordIndexEnglish];
+  }while(theWordEnglishTemp===previousWordEnglish);
+  
+  previousWordEnglish = theWordEnglishTemp;
+  outputEnglish.textContent = theWordEnglishTemp;
+  previousWordsListEnglish.push(previousWordEnglish);
+  console.log(previousWordsListEnglish);
+};
 
 //FrenchV2
-const btnFre = document.getElementById("generateFrench");
-const outFre = document.getElementById("outputFrench");
-      
-btnFre.addEventListener("click", getWordFre);
-let theWordFrench= ['Bonjoir', 'Salut', 'Bonsoir',];
-    
-function getWordFre(){      
+document.getElementById("generateFrench").addEventListener("click", generateFrench);
 
-  if (theWordFrench.length == 0) {
-    outFre.textContent = "Terminé";
-    return;
-  }
+let theWordFrench = ['Bonjoir', 'Salut','Bonsoir',];
+let previousWordFrench = "";
+let previousWordsListFrench = [];
+ 
+function generateFrench (){
+  
+  let wordIndexFrench = 0;
+  let theWordFrenchTemp = "";
 
-  let wordIndexFrench = Math.floor(Math.random() * theWordFrench.length);  
-  outFre.textContent = theWordFrench[wordIndexFrench];
-  theWordFrench.splice(wordIndexFrench, 1);
-  };
-
+  do {
+    wordIndexFrench = Math.floor(Math.random() * theWordFrench.length);  
+    theWordFrenchTemp = theWordFrench[wordIndexFrench];
+  }while(theWordFrenchTemp===previousWordFrench);
+  
+  previousWordFrench = theWordFrenchTemp;
+  outputFrench.textContent = theWordFrenchTemp;
+  previousWordsListFrench.push(previousWordFrench);
+  console.log(previousWordsListFrench);
+}
 
 //JapaneseV2
 document.getElementById("generateJapanese").addEventListener("click", generateJapanese);
