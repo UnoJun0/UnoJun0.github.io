@@ -215,6 +215,22 @@ html {
 .clearText {
   background-color: rgb(46, 46, 46);
 }
+
+ 
+.clearAll {
+  background-color: rgb(215, 0, 0);
+  color: #ffffff;
+  width: 200px;
+  font-size: larger;
+}
+
+#clearAll {
+  background-color: rgb(225, 62, 62);
+  width: 300px;
+  font-size: larger;
+  top: 200px;
+
+}
   
   /* Footer */  
   footer {
@@ -239,4 +255,4 @@ html {
       flex-direction: column;
       padding: 0 10% 2rem 10%;
     }
-  
+ 
